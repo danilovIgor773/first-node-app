@@ -1,22 +1,18 @@
-const Logger = require('./logger');
-const logger = new Logger();
-const _ = require('underscore');
+const express = require('express');
+const app = express();
 
-logger.on('messageLogged', (arg) => {
-    console.log(`Listener called with args: ${JSON.stringify(arg)}`);    
+app.get('/', (req, res) => {
+    res.send('Hello world');
 });
 
-logger.log("Here! Logger should be called!");
+app.get('/api/courses', (req, res) => {
+    res.send([1, 2, 3]);
+});
 
-const result = _.contains([1, 2, 3], 3);
-
-logger.log(`Result of _.contains underscore function is: ${result}`);
+app.listen(3000, () => console.log('Listening on port 3000...'));
 
 
-// emitter.on('messageLogged', (eventArgs) => {
-//     logger.log(`Logger called: ${JSON.stringify(eventArgs)}`);
-// });
 
-// emitter.emit('messageLogged', {id:1, url: 'http://'});
+
 
 
