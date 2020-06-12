@@ -13,5 +13,8 @@
     "express": "^4.17.1",
     "mongoose": "^5.9.16",
     "underscore": "^1.10.2"
+  },
+  "devDependencies": {
+    "joi": "^13.1.0"
   }
 }
